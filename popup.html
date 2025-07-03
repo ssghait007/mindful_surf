@@ -3,15 +3,164 @@
 <head>
     <title>Mindful Browsing</title>
     <style>
-        body { font-family: Arial, sans-serif; width: 200px; }
-        #message { margin: 10px; }
-        button { margin-top: 10px; }
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Courier Prime', monospace;
+            width: 300px;
+            padding: 20px;
+            background: #ffffff;
+            color: #000000;
+            border: 3px solid #000000;
+            box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #000000;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 15px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        .status {
+            background: #ffffff;
+            color: #000000;
+            padding: 15px;
+            border: 2px solid #000000;
+            margin-bottom: 15px;
+        }
+
+        .counter {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #000000;
+            color: #ffffff;
+            border: 3px double #ffffff;
+        }
+
+        .count-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-family: 'Courier Prime', monospace;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .count-label {
+            font-size: 12px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature::before {
+            content: "■";
+            color: #000000;
+            font-weight: bold;
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        .stats {
+            text-align: center;
+            font-size: 11px;
+            margin-top: 15px;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            border-top: 2px solid #000000;
+            padding-top: 15px;
+            background: #ffffff;
+            padding: 15px;
+            border: 1px solid #000000;
+        }
+
+        .ascii-art {
+            text-align: center;
+            font-size: 8px;
+            line-height: 1;
+            margin: 10px 0;
+            color: #000000;
+            font-family: 'Courier Prime', monospace;
+        }
+
+        .retro-button {
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid #000000;
+            padding: 5px 10px;
+            font-family: 'Courier Prime', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .retro-button:hover {
+            background: #000000;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
     </style>
 </head>
 <body>
-    <div id="message">Are you sure you want to visit this site?</div>
-    <button id="stay">Stay Focused</button>
-    <button id="continue">Continue</button>
+    <div class="header">
+        <h2>Mindful Browsing</h2>
+    </div>
+
+    <div class="ascii-art">
+        ============================<br>
+        = SYSTEM STATUS: ACTIVE    =<br>
+        ============================
+    </div>
+
+    <div class="status">
+        <div class="counter">
+            <div class="count-number" id="blockedCount">0</div>
+            <div class="count-label">Shorts & Reels Blocked Today</div>
+        </div>
+    </div>
+
+    <div class="stats">
+        &gt; STAY_FOCUSED.EXE RUNNING
+    </div>
+
     <script src="popup.js"></script>
 </body>
 </html>

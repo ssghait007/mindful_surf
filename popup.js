@@ -1,8 +1,11 @@
-document.getElementById("stay").onclick = function() {
-    window.close(); // Closes the popup
-};
+// Mindful Browsing Popup - Display blocked count
+document.addEventListener('DOMContentLoaded', function() {
+    // Get today's date as key
+    const today = new Date().toDateString();
 
-document.getElementById("continue").onclick = function() {
-    // Allow the user to continue to the site
-    window.close();
-};
+    // Load blocked count from storage
+    chrome.storage.local.get([today], function(result) {
+        const count = result[today] || 0;
+        document.getElementById('blockedCount').textContent = count;
+    });
+});

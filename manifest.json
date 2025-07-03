@@ -1,16 +1,24 @@
 {
     "manifest_version": 3,
     "name": "Mindful Browsing",
-    "version": "1.0",
-    "description": "Displays a popup when visiting social media sites.",
-    "permissions": ["tabs"],
+    "version": "2.0",
+    "description": "Blocks addictive browsing behaviors like YouTube shorts and Instagram reels to promote mindful internet usage.",
+    "permissions": ["tabs", "storage"],
     "background": {
       "service_worker": "background.js"
     },
     "content_scripts": [
       {
-        "matches": ["*://*.twitter.com/*", "*://*.youtube.com/*"],
-        "js": ["content.js"]
+        "matches": [
+          "*://*.youtube.com/*",
+          "*://*.youtu.be/*",
+          "*://youtube.com/*",
+          "*://youtu.be/*",
+          "*://*.instagram.com/*",
+          "*://instagram.com/*"
+        ],
+        "js": ["content.js"],
+        "run_at": "document_start"
       }
     ],
     "action": {
