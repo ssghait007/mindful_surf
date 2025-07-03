@@ -24,9 +24,11 @@
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-        "128": "icon128.png"
+        "16": "16.png",
+        "19": "19.png",
+        "38": "38.png",
+        "48": "48.png",
+        "128": "128.png"
       }
     }
   }
